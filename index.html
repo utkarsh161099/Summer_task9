@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>Kubernetes webUI</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?
+    family=Varela+Round&display=swap" ref="stylesheet">
+</head>
+<body>
+    <nav>
+        <img src="logo.png" class="logo">
+    </nav>
+    <div class="hero">
+    <div id="searchBox">
+    <section class="section-1">
+    <div class="s-box">
+            <img src="Google.png" id="googleIcon">
+	    <input type="text" id="textBox" onkeypress="kube(event)" placeholder="Type here...">	
+	    <br><br>
+	    <pre>
+              <div id="in1"></div>
+	    </pre>
+	</section>
+        </div>
+    </div>
+      	
+      
+
+<script>
+    var searchBox = document.getElementById("searchBox");
+    var googleIcon = document.getElementById("googleIcon");
+
+    googleIcon.onclick = function(){
+        searchBox.classList.toggle("active");
+    }
+
+	function kube(e) {
+
+if (e.keyCode == 13) {
+
+ 
+  document.getElementById('in1').innerHTML = "";
+  var i = document.getElementById("textBox").value
+  var id = "0"
+  var final = ""
+  if (((i.includes("deployments")) || (i.includes("deploy")) || (i.includes("deployment"))) && ((i.includes("create")) || (i.includes("generate")) || (i.includes("build")))) {
+    var image = prompt("Enter image name: ")
+	var deployment_name = prompt("Enter Deployment name: ")
+	var id = "1"
+	var final = id + " " + image + " " + deployment_name 
+	
+    }
+
+  else if (((i.includes("pods")) || (i.includes("pod"))) && ((i.includes("create")) || (i.includes("generate")) || (i.includes("build")))) {
+	var image = prompt("Enter image name: ")
+	var pod_name = prompt("Enter pod name: ")
+	var id = "2"
+	var final = id + " " + image + " " + pod_name
+	
+	}
+
+  else if (((i.includes("pods")) || (i.includes("pod"))) && ((i.includes("delete")) || (i.includes("remove")) || (i.includes("detach")))) {
+	var pod_name = prompt("Enter pod name: ")
+	var id = "3"
+	var final = id + " " + pod_name
+	
+	}
+
+  else if (((i.includes("deployments")) || (i.includes("deploy")) || (i.includes("deployment"))) && ((i.includes("delete")) || (i.includes("remove")) || (i.includes("detach")))) {
+	var deployment_name = prompt("Enter Deployment name: ")
+	var id = "4"
+	var final = id + " " + deployment_name
+	
+    }
+
+  else if (((i.includes("deployments")) || (i.includes("deploy")) || (i.includes("deployment"))) && ((i.includes("expose"))  || (i.includes("display")))) {
+	var deployment_name = prompt("Enter Deployment name: ")
+	var port_no = prompt("Enter port no on which you want yo export your deployment: ")
+	var expose_type = prompt(" 1. NodePort \n 2. ClusterIP \n 3.External \n Enter the type which you want to export ")
+	var id = "5"
+	var final = id + " " + deployment_name + " " + port_no + " " + expose_type
+	
+    }
+
+  else if (((i.includes("deployments")) || (i.includes("deploy")) || (i.includes("deployment"))) && ((i.includes("scale")) || (i.includes("increase")) || (i.includes("decrease")) || (i.includes("scale up")) || (i.includes("scale down")))) {
+	var deployment_name = prompt("Enter Deployment name: ")
+	var replica = prompt("Enter no. of replicas you need : ")
+	var id = "6"
+	var final = id + " " + deployment_name + " " + replica
+	
+    }
+
+  else if (((i.includes("pods")) || (i.includes("pod"))) && ((i.includes("show")) || (i.includes("get")) || (i.includes("list")))) {
+	var id = "7"
+	var final = id
+	
+	}
+
+  else if (((i.includes("deployments"))|| (i.includes("deployment")) || (i.includes("deploy"))) && ((i.includes("show")) || (i.includes("get")) || (i.includes("list")))) {
+	var id = "8"
+	var final = id 
+	
+	}
+  else if (((i.includes("services")) || (i.includes("services")) || (i.includes("svc"))) && ((i.includes("show")) || (i.includes("get")) || (i.includes("list")))) {
+	var id = "9"
+	var final = id
+	
+	}
+
+  else if (((i.includes("all")) || (i.includes("everything"))) && ((i.includes("delete")) || (i.includes("remove")) || (i.includes("destroy")))) {
+	var id = "10"
+	var final = id
+	
+}
+
+  else {
+	var id = "404"
+	var final = id
+	
+  }
+
+	
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://192.168.99.105/cgi-bin/kube.py?x=" + final, false)
+  xhr.send();
+  var output = xhr.responseText;
+
+  document.getElementById("in1").innerHTML = output;
+
+  document.getElementById('textBox').value = "";
+}
+}
+
+</script>  
+       
+</body>
+</html>
