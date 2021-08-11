@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: #f0f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f3ff;
+}
+
+.logo{
+    width: 140px;
+    background: #f0f3ff;
+}
+
+#searchBox{
+    border-radius: 55px;
+    padding: 30px;
+    background: #f0f3ff;
+    display: flex;
+    align-items: center;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+
+#googleIcon{
+    width: 50px;
+    cursor: pointer;
+}
+.mic-icon{
+    width: 0px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+input{
+    font-size: 20px;
+    width: 0px;
+    border: 0;
+    background: transparent;
+    outline: none;
+    transition: 2s;
+}
+
+.active input{
+    width: 500px;
+    padding: 12px 20px;
+}
+.active .mic-icon{
+    width: 30px;
+}
+
+.section-1 {
+	flex: 1;
+}
+.section-1 .logo {
+	display: block;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+.s-box {
+	width: 580px;
+	margin: 0px auto;
+	position: relative;
+	margin-top: -8px;
+	text-align: center;
+}
+.s-box .s-input {
+	display: block;
+	border: 1px solid #ddd;
+	color: rgba(0,0,0, 0.87);
+	font-size: 16px;
+	padding: 13px;
+	padding-left: 45px;
+	border-radius: 25px;
+	width: 100%;
+	transition: box-shadow 100ms;
+	outline: none;
+}
+.s-box  .s-input:hover {
+	border: 1px solid #fff;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.05), 
+				0 0 2px rgba(0, 0, 0, 0.05),
+				0 0 3px rgba(0, 0, 0, 0.05),
+				0 0 4px rgba(0, 0, 0, 0.05), 
+				0 0 5px rgba(0, 0, 0, 0.05), 
+				0 0 4px rgba(0, 0, 0, 0.05), 
+				0 0 5px rgba(0, 0, 0, 0.05)
+}
+.s-box .search-icon {
+	width: 20px;
+	opacity: .4;
+	position: absolute;
+	top: 10px;
+	left: 14px;
+}
+.s-box .vs-icon {
+	width: 14px;
+	position: absolute;
+	top: 13px;
+	right: 24px;
+}
+.s-btn {
+	border: 1px solid transparent;
+	padding: 9px 15px;
+	color: #666;
+	font-size: 14px;
+	border-radius: 4px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 28px;
+	outline: none;
+	cursor: pointer;
+	transition: border-color 100ms;
+}
+.s-btn:hover {
+	border: 1px solid #aaa;
+}
+.lang {
+	margin-top: 0px;
+	text-align: center;
+	font-size: 13px;
+	color: #111;
+}
+.lang a {
+	margin-left: 5px;
+	color: #1a0dab;
+}
+.lang a:hover {
+	text-decoration: underline;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+.links {
+	border-top: 1px solid #ddd;
+	display: flex;
+}
+.link-1 {
+	padding-left: 18.7px;
+	flex: 1;
+}
+.link-2 {
+	padding-right: 18.7px;
+}
+
+  #in1 {
+    padding-left: 100px;
+    font-size: 18px;
+    color:black;
+    text-align: justify;
+    margin-top: 5px;
+    font-family: Calibri;
+
+  }
+
+  #in1 ul {
+    list-style: none;
+  }
+
+  #in1 li,
+  th,
+  td {
+    padding-right: 60px;
+    padding-left: 50px;
+    padding-top: 7px;
+    text-align: left;
+  }
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
